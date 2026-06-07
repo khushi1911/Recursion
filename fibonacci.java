@@ -2,21 +2,20 @@ import java.util.*;
 
 public class fibonacci{
 
-    public static int fib(int n){
-        if(n==0){
-            return 0;
-        }
-        if(n==1){
-            return 1;
-        }
-        return fib(n-1)+fib(n-2);
-        
+    public static void fib(int a, int b, int n) {
+        if(n == 0) {
+        return;
     }
+    System.out.println(a);
+    fib(b, a+b, n-1);
+}
     public static void main(String[] args) {
         System.out.println("enter the no:");
         Scanner sc = new Scanner (System.in);
         int n = sc.nextInt();
+        int a=0;
+        int b=1;
 
-        System.out.println(fib(n));
+        fib(a,b,n);
     }
 }
