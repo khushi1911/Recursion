@@ -2,7 +2,7 @@
 import java.util.HashSet;
 
 
-public class subseq{
+public class uniqueSubset{
 
     public static void sub( String str , int idx , String newstr , HashSet<String> set ){
         
@@ -20,8 +20,8 @@ public class subseq{
         sub(str, idx+1, newstr,set);
     }
     public static void main(String[] args) {
-        String str = "abc";
-        HashSet<String> set = new Hashset<>();
+        String str = "aaa";
+        HashSet<String> set = new HashSet<>();
         sub(str, 0, "",set);
     }
 }
