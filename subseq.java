@@ -1,27 +1,18 @@
 
-import java.util.HashSet;
-
-
 public class subseq{
 
-    public static void sub( String str , int idx , String newstr , HashSet<String> set ){
+    public static void sub( String str , int idx , String newstr){
         
         if(idx == str.length()){
-           if(set.contains(newstr)){
-            return;
-           }else{
             System.out.println(newstr);
-            set.add(newstr);
             return;
-           }
         }
         char curr = str.charAt(idx);
-        sub(str, idx+1, newstr+curr,set);
-        sub(str, idx+1, newstr,set);
+        sub(str, idx+1, newstr+curr);
+        sub(str, idx+1, newstr);
     }
     public static void main(String[] args) {
         String str = "abc";
-        HashSet<String> set = new Hashset<>();
-        sub(str, 0, "",set);
+        sub(str, 0, "");
     }
 }
