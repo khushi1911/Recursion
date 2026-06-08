@@ -1,0 +1,20 @@
+
+public class paths{
+
+    public static int totalPaths(int i ,int j , int n , int m){
+        
+       if (i==n || j==m){
+        return 0;
+       }
+       if (i==n-1 && j==m-1){
+        return 1;
+       }
+       int down = totalPaths(i+1, j, n, m);
+       int right = totalPaths(i, j+1, n, m);
+       return down+right;
+    }
+    public static void main(String[] args) {
+        int n=3, m=3;
+        System.out.println(totalPaths(0, 0, n, m));
+    }
+}
