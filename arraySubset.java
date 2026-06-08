@@ -1,5 +1,5 @@
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class arraySubset{
 
@@ -7,24 +7,24 @@ public class arraySubset{
         for (int i=0 ; i<subset.size(); i++){
             System.out.print(subset.get(i)+" ");
         }
-        System.err.println();
+        System.out.println();
     }
-   public static void subset1(int n , ArrayList<Integer> subset) {
+   public static void subsetTotal(int n , ArrayList<Integer> subset) {
       if(n==0){
         print(subset);
         return ;
       }
       subset.add(n);
-      subset1(n-1, subset);
+      subsetTotal(n-1, subset);
 
       subset.remove(subset.size()-1);
-      subset1(n-1, subset);
+      subsetTotal(n-1, subset);
    }
 
 
    public static void main(String args[]) {
        int n=3;
        ArrayList<Integer> subset = new ArrayList<>();
-       subset1(n, subset);
+       subsetTotal(n, subset);
    }
 }
